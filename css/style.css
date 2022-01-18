@@ -1,0 +1,111 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+header{
+    background-color: limegreen;
+    height: 100px;
+}
+
+
+#miapp{
+    background-color: lightgray;
+}
+
+.container{
+    width: 80%;
+    height: 500px;
+    display: flex;
+    margin: auto;
+    justify-content: center;
+}
+
+.header_left{
+    height: 80px;
+    background-color: white;  
+    display: flex;
+    border: 1px solid gray;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.header_right{
+    height: 80px;
+    background-color: white;
+    display: flex;
+    border: 1px solid gray;
+    align-items: center;
+    justify-content: end;
+}
+
+.left{
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+}
+
+.right{
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+}
+
+.icons{
+    float: right;
+}
+
+.icons i{
+    padding: 8px;
+    color: grey;
+}
+
+.notification{
+    height: 80px;
+    background-color: lightskyblue;  
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid gray;
+}
+
+.notified i{
+    border-radius: 10px;
+}
+
+.search{
+    width: 100%;
+    height: 45px;
+    background-color: white;  
+    display: flex;
+    border: 1px solid gray;
+    justify-content: center;
+    padding: 5px;
+}
+
+input{
+    width: 70%;
+}
+
+.avatar{
+    width: 15%;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.users img{
+    width: 15%;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.users{
+    height: 80px;
+    background-color: white;  
+    display: flex;
+    border: 1px solid gray;
+    align-items: center;
+    justify-content: space-around;
+}
