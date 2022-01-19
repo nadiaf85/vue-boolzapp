@@ -24,6 +24,13 @@
                     </div>
             </div>
             <div class="header_right">
+                <div v-for="(element,index) in contacts" class="show" :class="isCorrente(index)">
+                    <img class="avatar_top" :src="element.avatar" alt="">
+                    <div class="info_users">
+                        <span><strong>{{element.name}}</strong></span>
+                        <span>{{element.messagges[element.messagges.length-1].date}}</span>
+                    </div>
+                </div>
                 <div class="icons">
                     <i class="fas fa-search"></i>
                     <i class="fas fa-paperclip"></i>
@@ -52,13 +59,13 @@
                     <input type="text" placeholder="Cerca o inizia una nuova chat">
                 </div>
 
-                <div class="users" v-for="(element,index) in contacts">
+                <div class="users" v-for="(element,index) in contacts" @click="selectChat(index)" :class="isCorrente(index)">
                     <img :src="element.avatar" alt="">
                     <div class="info_users">
-                        <div>{{contacts[index].name}}</div>
-                        <div><h6>{{contacts[index].date}</h6></div>
+                        <span><strong>{{element.name}}</strong></span>
+                        <span>{{element.messagges[element.messagges.length-1].date}}</span>
+                        <p>{{element.messagges[element.messagges.length-1].text}}</p>
                     </div>
-                    <span>{{contacts.text}}</span>
                 </div>
             </div>
 

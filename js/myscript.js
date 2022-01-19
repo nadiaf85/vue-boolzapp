@@ -1,7 +1,8 @@
 let app = new Vue ({
     el: "#miapp",
     data: {
-        azione: 0,
+        chatInput: "",
+        activeIndex: 0, 
         user: {
             name: 'Nome utente',
             avatar: ''
@@ -99,15 +100,21 @@ let app = new Vue ({
     },
     methods: {
         addMessage: function(){
-            this.contacts[this.azione].messages.push({
+            this.contacts[this.activeIndex].messages.push({
                     date: "",
                     text: this.chatInput,
                     status: 'sent'
             })
         },
-        changeChat: function(){
-
-        }
+        selectChat: function(newIndex){
+            this.activeIndex = newIndex;
+        },
+        isCorrente: function(index){
+            if(index == this.activeIndex){
+                return "active";
+            }
+            return "";
+        },
     }
     
 })
