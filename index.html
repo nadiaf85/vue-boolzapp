@@ -13,25 +13,35 @@
     <header></header>
 
     <div id="miapp">
-        <div class="container">
-            <div class="left">
-                <div class="header_left">
-                    <img class="avatar" src="https://icon-library.com/images/avatar-icon-images/avatar-icon-images-4.jpg" alt="">
-                    <span>{{user.name}}</span>
-                        <div class="icons">
-                            <i class="fas fa-circle-notch"></i>
-                            <i class="fas fa-comment-alt"></i>
-                            <i class="fas fa-ellipsis-v"></i>
-                        </div>
+        <div class="container_top">
+            <div class="header_left">
+                <img class="avatar" src="https://icon-library.com/images/avatar-icon-images/avatar-icon-images-4.jpg" alt="">
+                <span>{{user.name}}</span>
+                    <div class="icons">
+                        <i class="fas fa-circle-notch"></i>
+                        <i class="fas fa-comment-alt"></i>
+                        <i class="fas fa-ellipsis-v"></i>
+                    </div>
+            </div>
+            <div class="header_right">
+                <div class="icons">
+                    <i class="fas fa-search"></i>
+                    <i class="fas fa-paperclip"></i>
+                    <i class="fas fa-ellipsis-v"></i>
                 </div>
+            </div>          
+        </div>       
 
+        <!-- Main -->
+        <div class="container_main">
+            <div class="main_left">
                 <div class="notification">
                     <div class="bell">
                         <i class="fas fa-bell-slash"></i>
                     </div>
                     <div class="text">
                         <span>Ricevi notifiche di nuovi messaggi</span>
-                        <p>Attiva notifiche desktop</p>
+                        <p><a href="">Attiva le notifiche desktop</a></p>
                     </div>
                 </div>
                 
@@ -45,33 +55,32 @@
                 <div class="users" v-for="(element,index) in contacts">
                     <img :src="element.avatar" alt="">
                     <div class="info_users">
-                        <span>{{element.name}}</span>
-                        <span></span>
+                        <div>{{contacts[index].name}}</div>
+                        <div><h6>{{contacts[index].date}</h6></div>
                     </div>
+                    <span>{{contacts.text}}</span>
                 </div>
-
             </div>
 
-            <div class="right">
-                <div class="header_right">
-                    <div class="icons">
-                        <i class="fas fa-search"></i>
-                        <i class="fas fa-paperclip"></i>
-                        <i class="fas fa-ellipsis-v"></i>
+            <div class="main_right">
+                <div class="messages">
+                    <div class="messages_user_send">
+                            
+                    </div>
+                    <div class="messages_received">
+                            
                     </div>
 
                 </div>
-
-            </div>
-            
+                
+                <div class="send_msg">
+                    <i class="far fa-smile"></i>
+                    <input placeholder="Scrivi un messaggio" type="text">
+                    <i class="fas fa-microphone"></i>
+                </div> 
+            </div>   
         </div>
-
-    </div>
-
-
-
-
-
+    </div>    
 
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
     <script type="text/javascript" src="js/myscript.js"></script>

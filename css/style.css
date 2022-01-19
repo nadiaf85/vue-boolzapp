@@ -4,6 +4,10 @@
     padding: 0;
 }
 
+body{
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
 header{
     background-color: limegreen;
     height: 100px;
@@ -14,61 +18,74 @@ header{
     background-color: lightgray;
 }
 
-.container{
+.container_top{
     width: 80%;
-    height: 500px;
-    display: flex;
+    height: 60px;
     margin: auto;
+    display: flex;
     justify-content: center;
+    align-items: center;
 }
 
+/* Header */
+
 .header_left{
+    width: 35%;
     height: 80px;
     background-color: white;  
     display: flex;
-    border: 1px solid gray;
-    align-items: center;
     justify-content: space-around;
+    align-items: center;
+    border-right: 1px solid lightgray;
+    
 }
 
 .header_right{
+    width: 65%;
     height: 80px;
     background-color: white;
     display: flex;
-    border: 1px solid gray;
-    align-items: center;
-    justify-content: end;
-}
-
-.left{
-    width: 30%;
-    display: flex;
+    align-items: end;
+    justify-content: center;
     flex-direction: column;
-}
-
-.right{
-    width: 70%;
-    display: flex;
-    flex-direction: column;
-}
-
-.icons{
-    float: right;
 }
 
 .icons i{
     padding: 8px;
     color: grey;
+    font-size: 20px;
+}
+
+/* Main */
+
+.container_main{
+    width: 80%;
+    height: 600px;
+    display: flex;
+    margin: auto;
+    margin-top: 10px;
+}
+
+.main_left{
+    width: 35%;
+    display: flex;
+    flex-direction: column;
+}
+
+.main_right{
+    width: 65%;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
 }
 
 .notification{
     height: 80px;
     background-color: lightskyblue;  
     display: flex;
-    flex-direction: column;
-    justify-content: center;
     align-items: center;
-    border: 1px solid gray;
+    padding: 0 10px;
+    font-size: 13px;
 }
 
 .notified i{
@@ -80,13 +97,20 @@ header{
     height: 45px;
     background-color: white;  
     display: flex;
-    border: 1px solid gray;
     justify-content: center;
     padding: 5px;
 }
 
+.search_icon{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 10px;
+    font-size: 15px;
+}
+
 input{
-    width: 70%;
+    width: 90%;
 }
 
 .avatar{
@@ -105,7 +129,67 @@ input{
     height: 80px;
     background-color: white;  
     display: flex;
-    border: 1px solid gray;
     align-items: center;
+    justify-content: start;
+}
+
+/* Notification */
+
+.bell{
+    width: 50px;
+    height: 50px; 
+    margin-right: 10px;
+    background-color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.bell i{
+    color: lightskyblue;
+    font-size: 20px;
+}
+
+text{
+    display: flex;
+    flex-direction: column;
+}
+
+/* Main right messages */
+.messages .messages_user_send{
+    width: 30%;
+    background-color: lightgreen;
+    float: right;
+}
+
+.messages .messages_received{
+    width: 30%;
+    background-color: white;
+    float: left;
+}
+
+
+
+
+/* Barra invio msg sotto */
+.send_msg{
+    width: 100%;
+    height: 10%;
+    margin: auto;
+    background-color: #fcf2e5;
+    display: flex;
     justify-content: space-around;
+    align-items: center;
+    margin-top: 385px;
+}
+
+.send_msg input{
+    width: 85%;
+    height: 30px;
+    border: none;
+}
+
+.send_msg i{
+    color: grey;
+    font-size: 20px;
 }

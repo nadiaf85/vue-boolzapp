@@ -1,8 +1,7 @@
 let app = new Vue ({
     el: "#miapp",
     data: {
-        azione: 1,
-        chatInput: "",
+        azione: 0,
         user: {
             name: 'Nome utente',
             avatar: ''
@@ -106,6 +105,9 @@ let app = new Vue ({
                     status: 'sent'
             })
         },
+        changeChat: function(){
+
+        }
     }
     
 })
