@@ -48,7 +48,9 @@ header{
     justify-content: space-between;
     flex-direction: row;
     padding: 20px;
+    border-bottom: 1px solid lightgray;
 }
+
 
 .avatar_top{
     width: 8%;
@@ -89,15 +91,10 @@ header{
     margin-top: 10px;
 }
 
+/* Main left */
+
 .main_left{
     width: 35%;
-    display: flex;
-    flex-direction: column;
-}
-
-.main_right{
-    width: 65%;
-    height: 600px;
     display: flex;
     flex-direction: column;
 }
@@ -109,10 +106,7 @@ header{
     align-items: center;
     padding: 0 10px;
     font-size: 13px;
-}
-
-.notified i{
-    border-radius: 10px;
+    padding: 20px;
 }
 
 .search{
@@ -122,6 +116,7 @@ header{
     display: flex;
     justify-content: center;
     padding: 5px;
+    border-bottom: 1px solid lightgray;
 }
 
 .search_icon{
@@ -157,8 +152,6 @@ input{
     padding: 20px;
 }
 
-/* Notification */
-
 .bell{
     width: 50px;
     height: 50px; 
@@ -187,35 +180,62 @@ text{
     display: flex;
     justify-content: end;
     font-size: 13px;
+    
 }
 
+.gray{
+    background-color: lightgrey;
+}
 
 /* Main right messages */
-.messages .messages_user_send{
-    width: 30%;
-    background-color: lightgreen;
-    float: right;
-}
 
-.messages .messages_received{
-    width: 30%;
+.main_right{
+    width: 65%;
+    height: 445px;
+    display: flex;
+    flex-direction: column;
     background-color: white;
-    float: left;
+    border-left: 1px solid lightgrey;
 }
 
+.messagges{
+    width: 100%;
+    height: 0px;
+    display: flex;
+    flex-direction: column;
+}
 
+.messages_user_right{
+    width: 30%;
+    height: 40px;
+    background-color: lightgreen;
+    display: flex;
+    justify-content: end;
+    border-radius: 8px;
+    align-items: center;
+}
+
+.messages_user_left{
+    width: 30%;
+    height: 40px;
+    background-color: white;
+    display: flex;
+    justify-content: start;
+    border-radius: 8px;
+    align-items: center;
+}
 
 
 /* Barra invio msg sotto */
 .send_msg{
     width: 100%;
-    height: 10%;
+    height: 80%;
     margin: auto;
     background-color: #fcf2e5;
     display: flex;
     justify-content: space-around;
     align-items: center;
-    margin-top: 385px;
+    margin-top: 400px;
 }
 
 .send_msg input{

@@ -99,8 +99,8 @@ let app = new Vue ({
         ]
     },
     methods: {
-        addMessage: function(){
-            this.contacts[this.activeIndex].messages.push({
+        chatUser: function(){
+            this.contacts[this.activeIndex].messagges.push({
                     date: "",
                     text: this.chatInput,
                     status: 'sent'
@@ -115,6 +115,15 @@ let app = new Vue ({
             }
             return "";
         },
+        messaggesChat:function(index){
+            if(this.contacts[this.activeIndex].messagges[index].status == 'received'){
+                return 'messages_user_left'
+            }else{
+                return 'messages_user_right'
+            }
+        },
     }
     
 })
+
+

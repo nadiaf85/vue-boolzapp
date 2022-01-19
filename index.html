@@ -70,13 +70,11 @@
             </div>
 
             <div class="main_right">
-                <div class="messages">
-                    <div class="messages_user_send">
-                            
+                <div class="messagges">
+                    <div v-for="(element,index) in contacts[activeIndex].messagges" :class="messaggesChat(index)">
+                        <span>{{element.text}}</span>
                     </div>
-                    <div class="messages_received">
-                            
-                    </div>
+
 
                 </div>
                 
