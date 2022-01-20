@@ -141,7 +141,7 @@ let app = new Vue ({
         },
         filterName: function(){
             for(i = 0; i<this.contacts.length; i++){
-                if(this.contacts[i].name.contains(this.chatInput)){
+                if(this.contacts[i].name.toLowerCase().includes(this.chatInput.toLowerCase())){
                     this.contacts[i].visible = true;
                 }else{
                     this.contacts[i].visible = false;

@@ -56,7 +56,7 @@
                     <div class="search_icon">
                         <i class="fas fa-search"></i>
                     </div>
-                    <input type="text" placeholder="Cerca o inizia una nuova chat" @keyUp="filterName">
+                    <input type="text" placeholder="Cerca o inizia una nuova chat" @keyUp="filterName" v-model="chatInput">
                 </div>
 
                 <div class="users" v-for="(element,index) in contacts" :class="getVisible(index)" @click="selectChat(index)" :class="isCurrent(index)">
