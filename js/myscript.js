@@ -105,6 +105,9 @@ let app = new Vue ({
                     status: 'sent'
             })
                 this.chatInput = '';
+                status: 'received'
+                setTimeout(this.messageAnswer,1000)
+                console.log()
         },
         selectChat: function(newIndex){
             this.contatore = newIndex;
@@ -128,13 +131,24 @@ let app = new Vue ({
                     text: 'ok',
                     status: 'received'
             })
-            setTimeout(this.messageSend,1000);
         },
-        searchNames: function(){
-            if(this.contacts.length){}
+        getVisible: function(index){
+            if(this.contacts[index].visible ==true){
+                return 'active'
+            }else{
+                return 'notActive'
+            }
+        },
+        filterName: function(){
+            for(index = 0; i<this.contacts.length; i++){
+                if(this.contacts[index].name.contains(this.chatInput)){
+                    this.contacts[index].visible = true;
+                }else{
+                    this.contacts[index].visible = false;
+                }
+            }
         }
     }
-    
 })
 
 

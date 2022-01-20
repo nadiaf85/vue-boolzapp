@@ -56,10 +56,10 @@
                     <div class="search_icon">
                         <i class="fas fa-search"></i>
                     </div>
-                    <input type="text" placeholder="Cerca o inizia una nuova chat">
+                    <input type="text" placeholder="Cerca o inizia una nuova chat" @keyUp="filterName">
                 </div>
 
-                <div class="users" v-for="(element,index) in contacts" @click="selectChat(index)" :class="isCurrent(index)">
+                <div class="users" v-for="(element,index) in contacts" :class="getVisible(index)" @click="selectChat(index)" :class="isCurrent(index)">
                     <img :src="element.avatar" alt="">
                     <div class="info_users">
                         <div class="name"><span>{{element.name}}</span></div>
