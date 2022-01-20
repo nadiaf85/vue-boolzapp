@@ -24,7 +24,7 @@
                     </div>
             </div>
             <div class="header_right">
-                <div v-for="(element,index) in contacts" class="show" :class="isCorrente(index)">
+                <div v-for="(element,index) in contacts" class="show" :class="isCurrent(index)">
                     <img class="avatar_top" :src="element.avatar" alt="">
                     <div class="info_users_top">
                         <span><strong>{{element.name}}</strong></span>
@@ -59,7 +59,7 @@
                     <input type="text" placeholder="Cerca o inizia una nuova chat">
                 </div>
 
-                <div class="users" v-for="(element,index) in contacts" @click="selectChat(index)" :class="isCorrente(index)">
+                <div class="users" v-for="(element,index) in contacts" @click="selectChat(index)" :class="isCurrent(index)">
                     <img :src="element.avatar" alt="">
                     <div class="info_users">
                         <div class="name"><span>{{element.name}}</span></div>
@@ -71,7 +71,7 @@
 
             <div class="main_right">
                 <div class="messagges">
-                    <div v-for="(element,index) in contacts[contatore].messagges" :class="messaggesChat(index)">
+                    <div v-for="(element,index) in contacts[contatore].messagges" :class="messaggesChat(index)" :class="messageAnswer">
                         <span>{{element.text}}</span>
                     </div>
 

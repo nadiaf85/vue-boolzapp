@@ -109,7 +109,7 @@ let app = new Vue ({
         selectChat: function(newIndex){
             this.contatore = newIndex;
         },
-        isCorrente: function(index){
+        isCurrent: function(index){
             if(index == this.contatore){
                 return "active";
             }
@@ -125,14 +125,13 @@ let app = new Vue ({
         messageAnswer: function(){
             this.contacts[this.contatore].messagges.push({
                     date: "",
-                    text: this.chatInput,
+                    text: 'ok',
                     status: 'received'
-            }),
-                this.chatInput = 'ok';
-                setTimeout(this.messageSend,1000);
+            })
+            setTimeout(this.messageSend,1000);
         },
-        filterNames: function(names){
-            
+        searchNames: function(){
+            if(this.contacts.length){}
         }
     }
     
