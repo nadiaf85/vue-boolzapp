@@ -140,11 +140,11 @@ let app = new Vue ({
             }
         },
         filterName: function(){
-            for(index = 0; i<this.contacts.length; i++){
-                if(this.contacts[index].name.contains(this.chatInput)){
-                    this.contacts[index].visible = true;
+            for(i = 0; i<this.contacts.length; i++){
+                if(this.contacts[i].name.contains(this.chatInput)){
+                    this.contacts[i].visible = true;
                 }else{
-                    this.contacts[index].visible = false;
+                    this.contacts[i].visible = false;
                 }
             }
         }
