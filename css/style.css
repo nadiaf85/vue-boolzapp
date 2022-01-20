@@ -52,10 +52,13 @@ header{
 }
 
 
+
+
 .avatar_top{
-    width: 8%;
-    height: 50px;
+    width: 10%;
+    height: 60px;
     border-radius: 50%;
+    margin-right: 10px;
 }
 
 .icons{
@@ -85,7 +88,7 @@ header{
 
 .container_main{
     width: 80%;
-    height: 600px;
+    height: 800px;
     display: flex;
     margin: auto;
     margin-top: 10px;
@@ -133,14 +136,15 @@ input{
 
 .avatar{
     width: 15%;
-    height: 50px;
+    height: 60px;
     border-radius: 50%;
 }
 
 .users img{
-    width: 15%;
-    height: 50px;
+    width: 17%;
+    height: 60px;
     border-radius: 50%;
+    margin-right: 15px;
 }
 
 .users{
@@ -150,6 +154,15 @@ input{
     align-items: center;
     justify-content: start;
     padding: 20px;
+}
+
+.name{
+    font-weight: bold;
+}
+
+.date{
+    font-size: 13px;
+    color: gray;
 }
 
 .bell{
@@ -172,8 +185,17 @@ text{
     flex-direction: column;
 }
 
+.info_users_top{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+}
+
 .info_users{
     width: 80%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 .info_users p{
@@ -200,42 +222,50 @@ text{
 
 .messagges{
     width: 100%;
-    height: 0px;
     display: flex;
     flex-direction: column;
+    align-items: flex-end;
+    background-image: url(https://user-images.githubusercontent.com/15075759/28719144-86dc0f70-73b1-11e7-911d-60d70fcded21.png);
 }
 
 .messages_user_right{
-    width: 30%;
-    height: 40px;
+    width: 40%;
+    height: 60px;
     background-color: lightgreen;
     display: flex;
-    justify-content: end;
+    justify-content: center;
     border-radius: 8px;
     align-items: center;
+    margin-top: 15px;
+    margin-right: 30px;
+    padding: 20px;
+    text-align: center;
 }
 
 .messages_user_left{
-    width: 30%;
-    height: 40px;
+    width: 40%;
+    height: 60px;
     background-color: white;
     display: flex;
-    justify-content: start;
+    justify-content: center;
     border-radius: 8px;
     align-items: center;
+    margin-top: 15px;
+    padding: 20px;
+    text-align: center;
 }
 
 
 /* Barra invio msg sotto */
 .send_msg{
     width: 100%;
-    height: 80%;
+    height: 50px;
     margin: auto;
     background-color: #fcf2e5;
     display: flex;
     justify-content: space-around;
     align-items: center;
-    margin-top: 400px;
+    margin-top: 190px;
 }
 
 .send_msg input{

@@ -1,8 +1,8 @@
 let app = new Vue ({
     el: "#miapp",
     data: {
-        chatInput: "",
-        activeIndex: 0, 
+        chatInput: '',
+        contatore: 0, 
         user: {
             name: 'Nome utente',
             avatar: ''
@@ -10,7 +10,7 @@ let app = new Vue ({
         contacts: [
             {
                 name: 'Michele',
-                avatar: 'https://icon-library.com/images/icon-avatars/icon-avatars-16.jpg',
+                avatar: 'https://www.pngarts.com/files/3/Avatar-Transparent-Image.png',
                 visible: true,
                 messagges: [
                     {
@@ -56,7 +56,7 @@ let app = new Vue ({
             },
             {
                 name: 'Samuele',
-                avatar: 'https://icon-library.com/images/avatar-icon-images/avatar-icon-images-14.jpg',
+                avatar: 'https://www.pngarts.com/files/3/Avatar-PNG-Download-Image.png',
                 visible: true,
                 messagges: [
                     {
@@ -79,7 +79,7 @@ let app = new Vue ({
             },
             {
                 name: 'Luisa',
-                avatar: 'https://icon-library.com/images/avatar-icon-images/avatar-icon-images-6.jpg',
+                avatar: 'https://www.levibio.it/wp-content/uploads/2019/03/female-avatar-profile-icon-round-woman-face-vector-18307274.jpg',
                 visible: true,
                 messagges: [
                     {
@@ -99,29 +99,41 @@ let app = new Vue ({
         ]
     },
     methods: {
-        chatUser: function(){
-            this.contacts[this.activeIndex].messagges.push({
-                    date: "",
+        messageSend: function(){
+            this.contacts[this.contatore].messagges.push({
                     text: this.chatInput,
                     status: 'sent'
             })
+                this.chatInput = '';
         },
         selectChat: function(newIndex){
-            this.activeIndex = newIndex;
+            this.contatore = newIndex;
         },
         isCorrente: function(index){
-            if(index == this.activeIndex){
+            if(index == this.contatore){
                 return "active";
             }
             return "";
         },
         messaggesChat:function(index){
-            if(this.contacts[this.activeIndex].messagges[index].status == 'received'){
+            if(this.contacts[this.contatore].messagges[index].status == 'received'){
                 return 'messages_user_left'
             }else{
                 return 'messages_user_right'
             }
         },
+        messageAnswer: function(){
+            this.contacts[this.contatore].messagges.push({
+                    date: "",
+                    text: this.chatInput,
+                    status: 'received'
+            }),
+                this.chatInput = 'ok';
+                setTimeout(this.messageSend,1000);
+        },
+        filterNames: function(names){
+            
+        }
     }
     
 })
