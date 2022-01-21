@@ -16,7 +16,7 @@
         <div class="container_top">
             <div class="header_left">
                 <img class="avatar" src="https://icon-library.com/images/avatar-icon-images/avatar-icon-images-4.jpg" alt="">
-                <span><strong>{{user.name}}</strong></span>
+                <div class="name_top_left"><span><strong>{{user.name}}</strong></span></div>
                     <div class="icons">
                         <i class="fas fa-circle-notch"></i>
                         <i class="fas fa-comment-alt"></i>
@@ -73,9 +73,9 @@
                 <div class="messagges">
                         <div v-for="(element,index) in contacts[contatore].messagges" :class="messaggesChat(index)" :class="messageAnswer">
                             <div class="message">{{element.text}} <i class="fas fa-chevron-down" @click="arrowDownMenu(index)"></i>
-                                <ul class="dropdown_menu" v-show="correnteArrow = index">
+                                <ul class="dropdown_menu" v-show="correnteArrow == index">
                                     <li>Message Info</li>
-                                    <li>Delete Message</li>
+                                    <li @click="deleteMessage">Delete message</li>
                                 </ul>
                             </div>
                         </div>
@@ -91,6 +91,7 @@
         </div>
     </div>    
 
+    
     <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
     <script type="text/javascript" src="js/myscript.js"></script>

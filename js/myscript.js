@@ -4,7 +4,7 @@ let app = new Vue ({
         search: '',
         chatInputBottom: '',
         contatore: 0, 
-        correnteArrow: 0,
+        correnteArrow: null,
         user: {
             name: 'Nome utente',
             avatar: ''
@@ -100,13 +100,15 @@ let app = new Vue ({
             }, 
         ]
     },
+    updated: function(){
+        this.scroll()
+    },
     methods: {
         messageSend: function(){
             this.contacts[this.contatore].messagges.push({
                     text: this.chatInputBottom,
                     status: 'sent'
             })
-                this.scroll;
                 this.chatInputBottom = '';
                 status: 'received'
                 setTimeout(this.messageAnswer,1000)
@@ -114,6 +116,7 @@ let app = new Vue ({
         },
         selectChat: function(newIndex){
             this.contatore = newIndex;
+            this.correnteArrow=null
         },
         isCurrent: function(index){
             if(index == this.contatore){
@@ -152,11 +155,19 @@ let app = new Vue ({
             }
         },
         arrowDownMenu: function(index){
-            this.correnteArrow = index
+            if(this.correnteArrow == index){
+                this.correnteArrow = null
+            }else{
+                this.correnteArrow=index
+            }
         },
         scroll: function(){
             const chat = document.querySelector('.messagges')
             chat.scrollTop = chat.scrollHeight;
+            console.log(chat.scrollTop)
+        },
+        deleteMessage: function(index){
+            this.contacts[this.contatore].messagges.splice(index,1);
         }
     }
 })

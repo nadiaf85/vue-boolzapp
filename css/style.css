@@ -51,14 +51,24 @@ header{
     border-bottom: 1px solid lightgray;
 }
 
-
-
+.avatar{
+    width: 15%;
+    height: 60px;
+    border-radius: 50%;
+    margin-left: 8px;
+}
 
 .avatar_top{
     width: 10%;
     height: 60px;
     border-radius: 50%;
     margin-right: 10px;
+}
+
+.name_top_left{
+    font-weight: bold;
+    width: 55%;
+    margin-left: 3px;
 }
 
 .icons{
@@ -128,16 +138,11 @@ header{
     justify-content: center;
     padding: 10px;
     font-size: 15px;
+    color: grey;
 }
 
 input{
     width: 90%;
-}
-
-.avatar{
-    width: 15%;
-    height: 60px;
-    border-radius: 50%;
 }
 
 .users img{
@@ -221,10 +226,16 @@ text{
     border-left: 1px solid lightgrey;
 }
 
+.message i{
+    margin-left: 10px;
+}
+
 .messagges{
     width: 100%;
+    height: calc(100% - 50px);
     display: flex;
     flex-direction: column;
+    overflow: hidden;
     background-image: url(https://user-images.githubusercontent.com/15075759/28719144-86dc0f70-73b1-11e7-911d-60d70fcded21.png);
 }
 
@@ -241,22 +252,24 @@ text{
 }
 
 .messages_user_right .message{
-    width: 400px;
+    width: 39%;
     background-color: lightgreen;
     float: right;
     border-radius: 8px;
     margin: 15px;
     margin-right: 30px;
     padding: 20px;
+    position: relative;
 }
 
 .messages_user_left .message{
-    width: 400px;
+    width: 44%;
     background-color: white;
     border-radius: 8px;
     margin-top: 15px;
     padding: 20px;
     float: left;
+    position: relative;
 }
 
 
@@ -269,7 +282,6 @@ text{
     display: flex;
     justify-content: space-around;
     align-items: center;
-    margin-top: 190px;
 }
 
 .send_msg input{
@@ -288,7 +300,26 @@ text{
 }
 
 .dropdown_menu{
-    display: none;
+    width: 150px;
+    height: 70px;
+    position: absolute;
     list-style: none;
+    background-color:white;
+    color: black;
+    left: 117px;
+    text-align: center;
+    z-index: 2;
 }
 
+.dropdown_menu li{
+    padding: 4px;
+    margin-top: 8px;
+}
+
+/* .message i{
+    display: none;
+}
+
+.message i:hover{
+    display: block;
+} */
