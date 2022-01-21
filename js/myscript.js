@@ -1,8 +1,10 @@
 let app = new Vue ({
     el: "#miapp",
     data: {
-        chatInput: '',
+        search: '',
+        chatInputBottom: '',
         contatore: 0, 
+        correnteArrow: 0,
         user: {
             name: 'Nome utente',
             avatar: ''
@@ -101,10 +103,11 @@ let app = new Vue ({
     methods: {
         messageSend: function(){
             this.contacts[this.contatore].messagges.push({
-                    text: this.chatInput,
+                    text: this.chatInputBottom,
                     status: 'sent'
             })
-                this.chatInput = '';
+                this.scroll;
+                this.chatInputBottom = '';
                 status: 'received'
                 setTimeout(this.messageAnswer,1000)
                 console.log()
@@ -127,7 +130,7 @@ let app = new Vue ({
         },
         messageAnswer: function(){
             this.contacts[this.contatore].messagges.push({
-                    date: "",
+                    date: dayjs ().format ("DD/MM/YYYY HH:mm:ss"),
                     text: 'ok',
                     status: 'received'
             })
@@ -141,12 +144,19 @@ let app = new Vue ({
         },
         filterName: function(){
             for(i = 0; i<this.contacts.length; i++){
-                if(this.contacts[i].name.toLowerCase().includes(this.chatInput.toLowerCase())){
+                if(this.contacts[i].name.toLowerCase().includes(this.search.toLowerCase())){
                     this.contacts[i].visible = true;
                 }else{
                     this.contacts[i].visible = false;
                 }
             }
+        },
+        arrowDownMenu: function(index){
+            this.correnteArrow = index
+        },
+        scroll: function(){
+            const chat = document.querySelector('.messagges')
+            chat.scrollTop = chat.scrollHeight;
         }
     }
 })

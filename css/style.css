@@ -158,7 +158,7 @@ input{
 
 .name{
     font-weight: bold;
-    width: 40%;
+    width: 55%;
 }
 
 .date{
@@ -225,35 +225,38 @@ text{
     width: 100%;
     display: flex;
     flex-direction: column;
-    align-items: flex-end;
-    /* background-image: url(https://user-images.githubusercontent.com/15075759/28719144-86dc0f70-73b1-11e7-911d-60d70fcded21.png); */
+    background-image: url(https://user-images.githubusercontent.com/15075759/28719144-86dc0f70-73b1-11e7-911d-60d70fcded21.png);
 }
 
 .messages_user_right{
-    width: 40%;
+    width: 100%;
     height: 60px;
-    background-color: lightgreen;
-    display: flex;
-    justify-content: center;
-    border-radius: 8px;
-    align-items: center;
-    margin-top: 15px;
-    margin-right: 30px;
-    padding: 20px;
-    text-align: center;
+    margin: 20px;     
 }
 
 .messages_user_left{
-    width: 40%;
+    width: 100%;
     height: 60px;
-    background-color: white;
-    display: flex;
-    justify-content: center;
+    margin: 20px;
+}
+
+.messages_user_right .message{
+    width: 400px;
+    background-color: lightgreen;
+    float: right;
     border-radius: 8px;
-    align-items: center;
+    margin: 15px;
+    margin-right: 30px;
+    padding: 20px;
+}
+
+.messages_user_left .message{
+    width: 400px;
+    background-color: white;
+    border-radius: 8px;
     margin-top: 15px;
     padding: 20px;
-    text-align: center;
+    float: left;
 }
 
 
@@ -283,3 +286,9 @@ text{
 .notActive{
     display: none;
 }
+
+.dropdown_menu{
+    display: none;
+    list-style: none;
+}
+
