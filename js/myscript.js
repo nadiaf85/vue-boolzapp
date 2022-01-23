@@ -168,6 +168,12 @@ let app = new Vue ({
         },
         deleteMessage: function(index){
             this.contacts[this.contatore].messagges.splice(index,1);
+        },
+        colorSelect: function(index){
+            if(index == this.contatore){
+                return "grey";
+            }
+            return "";
         }
     }
 })

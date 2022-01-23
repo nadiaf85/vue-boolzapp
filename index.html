@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <title>vue-boolzapp</title>
+    <title>Boolzapp</title>
 </head>
 <body>
 
@@ -17,7 +17,7 @@
             <div class="header_left">
                 <img class="avatar" src="https://icon-library.com/images/avatar-icon-images/avatar-icon-images-4.jpg" alt="">
                 <div class="name_top_left"><span><strong>{{user.name}}</strong></span></div>
-                    <div class="icons">
+                    <div class="icons_left">
                         <i class="fas fa-circle-notch"></i>
                         <i class="fas fa-comment-alt"></i>
                         <i class="fas fa-ellipsis-v"></i>
@@ -31,7 +31,7 @@
                         <div class="date">Ultimo accesso {{element.messagges[element.messagges.length-1].date}}</span></div>
                     </div>
                 </div>
-                <div class="icons">
+                <div class="icons_right">
                     <i class="fas fa-search"></i>
                     <i class="fas fa-paperclip"></i>
                     <i class="fas fa-ellipsis-v"></i>
@@ -59,7 +59,7 @@
                     <input type="text" placeholder="Cerca o inizia una nuova chat" @keyUp="filterName" v-model="search">
                 </div>
 
-                <div class="users" v-for="(element,index) in contacts" :class="getVisible(index)" @click="selectChat(index)" :class="isCurrent(index)">
+                <div class="users" v-for="(element,index) in contacts" :class="getVisible(index)" @click="selectChat(index)" :class="isCurrent(index)" @click="colorSelect">
                     <img :src="element.avatar" alt="">
                     <div class="info_users">
                         <div class="name"><span>{{element.name}}</span></div>
@@ -73,8 +73,9 @@
                 <div class="messagges">
                         <div v-for="(element,index) in contacts[contatore].messagges" :class="messaggesChat(index)" :class="messageAnswer">
                             <div class="message">{{element.text}} <i class="fas fa-chevron-down" @click="arrowDownMenu(index)"></i>
+                                <div class="date_messages">{{element.date}}</div>
                                 <ul class="dropdown_menu" v-show="correnteArrow == index">
-                                    <li>Message Info</li>
+                                    <li>Message info</li>
                                     <li @click="deleteMessage">Delete message</li>
                                 </ul>
                             </div>
@@ -91,7 +92,6 @@
         </div>
     </div>    
 
-    
     <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
     <script type="text/javascript" src="js/myscript.js"></script>

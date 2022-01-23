@@ -9,7 +9,7 @@ body{
 }
 
 header{
-    background-color: limegreen;
+    background-color: #128c7e;
     height: 100px;
 }
 
@@ -71,11 +71,19 @@ header{
     margin-left: 3px;
 }
 
-.icons{
-    width: 27%;
+.icons_left{
+    width: 24%;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    color: grey;
+    font-size: 20px;
 }
 
-.icons i{
+.icons_right{
+    width: 15%;
+    display: flex;
+    justify-content: space-between;
     padding: 8px;
     color: grey;
     font-size: 20px;
@@ -98,7 +106,7 @@ header{
 
 .container_main{
     width: 80%;
-    height: 800px;
+    height: 700px;
     display: flex;
     margin: auto;
     margin-top: 10px;
@@ -208,11 +216,15 @@ text{
     display: flex;
     justify-content: end;
     font-size: 13px;
-    
 }
 
-.gray{
-    background-color: lightgrey;
+.usersContainer{
+    width: 100%;
+    display: flex;
+}
+
+.grey{
+    background-color: grey;
 }
 
 /* Main right messages */
@@ -253,23 +265,31 @@ text{
 
 .messages_user_right .message{
     width: 39%;
-    background-color: lightgreen;
+    background-color: #dcf8c6;
     float: right;
     border-radius: 8px;
     margin: 15px;
-    margin-right: 30px;
+    margin-right: 45px;
     padding: 20px;
     position: relative;
 }
 
 .messages_user_left .message{
-    width: 44%;
+    width: 39%;
     background-color: white;
     border-radius: 8px;
     margin-top: 15px;
     padding: 20px;
     float: left;
     position: relative;
+}
+
+.date_messages{
+    font-size: 10px;
+    color: #a6a6a6;
+    position: absolute;
+    left: 186px;
+    bottom: 6px;
 }
 
 
@@ -288,6 +308,7 @@ text{
     width: 85%;
     height: 30px;
     border: none;
+    padding: 10px;
 }
 
 .send_msg i{
@@ -316,7 +337,7 @@ text{
     margin-top: 8px;
 }
 
-/* .message i{
+/* .message i:hover{
     display: none;
 }
 
