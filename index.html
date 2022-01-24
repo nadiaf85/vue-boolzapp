@@ -59,12 +59,12 @@
                     <input type="text" placeholder="Cerca o inizia una nuova chat" @keyUp="filterName" v-model="search">
                 </div>
 
-                <div class="users" v-for="(element,index) in contacts" :class="getVisible(index)" @click="selectChat(index)" :class="isCurrent(index)" @click="colorSelect">
+                <div class="users" v-for="(element,index) in contacts" :class="getVisible(index)" @click="selectChat(index)" :class="isCurrent(index)" class="colorChange" :class="changeColor(index)">
                     <img :src="element.avatar" alt="">
                     <div class="info_users">
                         <div class="name"><span>{{element.name}}</span></div>
                         <div class="date"><span>{{element.messagges[element.messagges.length-1].date}}</span></div>
-                            <p>{{element.messagges[element.messagges.length-1].text}}</span>
+                            <p>{{element.messagges[element.messagges.length-1].text}}</p>
                     </div>
                 </div>
             </div>

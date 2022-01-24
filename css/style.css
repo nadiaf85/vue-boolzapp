@@ -223,8 +223,13 @@ text{
     display: flex;
 }
 
-.grey{
-    background-color: grey;
+.color{
+    background-color: lightgray;
+}
+
+.colorChange{
+    height: 100%;
+    width: 100%;
 }
 
 /* Main right messages */
@@ -337,10 +342,13 @@ text{
     margin-top: 8px;
 }
 
-/* .message i:hover{
-    display: none;
+.fa-chevron-down{
+    float: right;
+    display: none !important;
+    color:   #cccccc;
 }
 
-.message i:hover{
-    display: block;
-} */
+.message:hover .fa-chevron-down{
+    display: block !important;
+
+}

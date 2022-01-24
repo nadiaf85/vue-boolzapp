@@ -145,6 +145,12 @@ let app = new Vue ({
                 return 'notActive'
             }
         },
+        changeColor: function( index){
+            if(index == this.contatore){
+                return "color";
+            }
+            return "";
+        },
         filterName: function(){
             for(i = 0; i<this.contacts.length; i++){
                 if(this.contacts[i].name.toLowerCase().includes(this.search.toLowerCase())){
@@ -168,12 +174,6 @@ let app = new Vue ({
         },
         deleteMessage: function(index){
             this.contacts[this.contatore].messagges.splice(index,1);
-        },
-        colorSelect: function(index){
-            if(index == this.contatore){
-                return "grey";
-            }
-            return "";
         }
     }
 })
