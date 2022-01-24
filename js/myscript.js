@@ -139,11 +139,15 @@ let app = new Vue ({
             })
         },
         getVisible: function(index){
+            let classi = ''
             if(this.contacts[index].visible ==true){
-                return 'active'
+                classi += 'active'
             }else{
-                return 'notActive'
+                classi += 'notActive'
             }
+            if(index == this.contatore){
+             classi += " color";
+        }return classi
         },
         changeColor: function( index){
             if(index == this.contatore){
@@ -174,6 +178,12 @@ let app = new Vue ({
         },
         deleteMessage: function(index){
             this.contacts[this.contatore].messagges.splice(index,1);
+        },
+        colorSelect: function(index){
+            if(index == this.contatore){
+                return "grey";
+            }
+            return "";
         }
     }
 })
