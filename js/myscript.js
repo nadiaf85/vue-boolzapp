@@ -106,6 +106,7 @@ let app = new Vue ({
     methods: {
         messageSend: function(){
             this.contacts[this.contatore].messagges.push({
+                    date: dayjs ().format ("DD/MM/YYYY HH:mm:ss"),
                     text: this.chatInputBottom,
                     status: 'sent'
             })
